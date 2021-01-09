@@ -23,6 +23,17 @@ impl EventHandler for Handler {
                 println!("Error sending message: {:?}", why);
             }
         }
+        
+        if msg.content == "!messageme" {
+            let dm = msg.author.dm(&ctx, |m| {
+                m.content("Hello!");
+                m
+            }).await;
+
+            if let Err(why) = dm {
+                println!("Error when direct messaging user: {:?}", why);
+            }
+        }
     }
 
     async fn ready(&self, _: Context, ready: Ready) {
