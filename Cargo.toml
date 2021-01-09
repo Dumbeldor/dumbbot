@@ -1,0 +1,18 @@
+[package]
+name = "rustbot"
+version = "0.1.0"
+authors = ["Vincent Glize <vincent.glize@live.fr>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies.serenity]
+version = "0.10"
+default-features = false
+features = ["client", "gateway", "rustls_backend", "model",]
+
+[dependencies]
+tokio = { version = "1.0", features = ["macros", "rt-multi-thread"] }
+confy = "0.4"
+serde = { version = "1.0", features = ["derive"] }
+lazy_static = "1.4"
