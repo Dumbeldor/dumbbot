@@ -1,1 +1,7 @@
+[discord]
 token = "token"
+
+[messages]
+help = """
+help message
+"""
